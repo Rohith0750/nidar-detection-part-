@@ -1,4 +1,4 @@
-# 📌 Human Detection with YOLOv8 (GUI-Based)
+# 📌 Human Detection with YOLO11x (GUI-Based)
 This project is a Python-based desktop application that detects humans in a video file using Ultralytics YOLOv8 and OpenCV, with a simple GUI built using Tkinter.
 
 It supports tracking, bounding box visualization, and saves the processed video with detected humans.
@@ -6,7 +6,7 @@ It supports tracking, bounding box visualization, and saves the processed video 
 ## 🔍 Features
 🖼️ Graphical User Interface (GUI) for easy video selection
 
-✅ Human detection using YOLOv8
+✅ Human detection using YOLO11x
 
 🧠 Real-time object tracking with confidence scores
 
@@ -27,7 +27,7 @@ The GUI allows users to select any .mp4 video file.
 
 When you click "Run Detection", the app:
 
-Loads the YOLOv8 model (yolo11x.pt)
+Loads the YOLO11x model (yolo11x.pt)
 
 Resizes frames to 640×480
 
@@ -39,12 +39,33 @@ Annotates detected persons with bounding boxes and track IDs
  outputDetected/output_detected.mp4
 You get a popup message once processing completes — whether humans were detected or not.
 
+## 🛠️ Requirements
+
+### 🔧 Set Up Virtual Environment (Recommended)
+
+```bash
+# Clone the repository
+git clone https://github.com/Rohith0750/nidar-detection-part-.git
+
+cd nidar-detection-part-
+
+# Create and activate virtual environment
+python -m venv venv
+# For Windows:
+venv\Scripts\activate
+# For macOS/Linux:
+source venv/bin/activate
+```
+
 ## ▶️ How to Use
 Run the script:
 
+```bash
+#in terminal
+pip install ultralytics opencv-python 
 
 python main.py
-
+```
 Click "Browse Video" to select a .mp4 file.
 
 Click "Run Detection" to start processing.
@@ -62,10 +83,11 @@ Frames are resized to 640x480 for consistency and processing speed.
 You can tweak:
 
 CONFIDENCE_THRESHOLD to adjust detection sensitivity
-
+```bash
 model = YOLO("yolo11x.pt") to use other YOLOv8 models like yolov8s.pt, yolov8m.pt, etc.
+```
 
-classes=[0] if you want to detect more than just people (e.g., cars, dogs, etc.)
+classes=[0] if you want to detect more than just people 
 
 🧪 Tested On
 Python 3.10
